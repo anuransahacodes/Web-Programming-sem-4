@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Edit Contact</h2>
+    <form action="{{ url_for('edit_contact', contact_id=contact.id) }}" method="POST" class="form-card">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="{{ contact.name }}" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" value="{{ contact.phone }}" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="{{ contact.email }}" required>
+        </div>
+        <button type="submit" class="btn">Update Contact</button>
+    </form>
+{% endblock %}
